@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import allure
 
 
 class CalculatorPage:
@@ -9,10 +10,8 @@ class CalculatorPage:
         self.open()
 
     def open(self):
-        self.driver.get(self.url)
-
-    def close(self):
-        self.driver.quit()
+        with allure.step('Открыть страницу калькулятора'):
+            self.driver.get(self.url)
 
     def press_button(self, button_value):
         button_locator = self.driver.find_element(By.XPATH, f'//button[text()="{button_value}"]')
@@ -34,5 +33,6 @@ class CalculatorPage:
         return second_operand.text
 
     def get_result(self):
-        result = self.driver.find_element(By.CSS_SELECTOR, '.display__result')
-        return result.text
+        with allure.step('Проверить результат'):
+            result = self.driver.find_element(By.CSS_SELECTOR, '.display__result')
+            return result.text
