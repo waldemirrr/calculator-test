@@ -1,7 +1,7 @@
 import allure
 from pages.calculator_page import CalculatorPage
 
-#to trigger
+#to trigger 2
 def test_open(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Проверить присутствует ли класс калькулятора'):
