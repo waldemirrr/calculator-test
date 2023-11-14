@@ -1,18 +1,15 @@
 name: Automated tests
 
 on:
-  [
-    push:
-    workflow_dispatch:
-      inputs:
-        deployment_target:
-          description: Choose target
-          required: true
-          default: test
-          type: choice
-          options:
-            - test
-  ]
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: Choose target
+        required: true
+        default: test
+        type: choice
+        options:
+          - test
 
 jobs:
   test:
