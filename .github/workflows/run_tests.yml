@@ -53,6 +53,13 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
       - run: allure generate -c allure-results -o _site
+      - name: Store generated report
+        uses: actions/upload-artifact@v3
+        with:
+          name: _site
+          path:
+            _site
+          retention-days: 1
 
   publish-report:
     runs-on: ubuntu-latest
