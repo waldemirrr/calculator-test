@@ -1,5 +1,4 @@
 import allure
-
 from pages.calculator_page import CalculatorPage
 
 
