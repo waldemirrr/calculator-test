@@ -1,7 +1,9 @@
 import allure
+from allure import severity, severity_level
 from pages.calculator_page import CalculatorPage
 
-#to trigger 2
+
+@severity(severity_level.BLOCKER)
 def test_open(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Проверить присутствует ли класс калькулятора'):
@@ -9,6 +11,7 @@ def test_open(driver):
 
 
 # test id - 2
+@severity(severity_level.BLOCKER)
 def test_all_numbers(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать все кнопки с цифровыми значениями'):
@@ -28,6 +31,7 @@ def test_all_numbers(driver):
 
 
 # test id - 3
+@severity(severity_level.BLOCKER)
 def test_plus_operator(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -42,6 +46,7 @@ def test_plus_operator(driver):
 
 
 # test id - 4
+@severity(severity_level.BLOCKER)
 def test_minus_operator(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -56,6 +61,7 @@ def test_minus_operator(driver):
 
 
 # test id - 5
+@severity(severity_level.BLOCKER)
 def test_multiply_operator(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 2'):
@@ -70,6 +76,7 @@ def test_multiply_operator(driver):
 
 
 # test id - 6
+@severity(severity_level.BLOCKER)
 def test_divide_operator(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 2'):
@@ -84,6 +91,7 @@ def test_divide_operator(driver):
 
 
 # test id - 7
+@severity(severity_level.CRITICAL)
 def test_delete_symbol_operator(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -102,6 +110,7 @@ def test_delete_symbol_operator(driver):
 
 
 # test id - 8
+@severity(severity_level.CRITICAL)
 def test_clear_all(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -119,6 +128,7 @@ def test_clear_all(driver):
 
 
 # test id - 9.1
+@severity(severity_level.BLOCKER)
 def test_plus_minus_operator_on_first_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -133,6 +143,7 @@ def test_plus_minus_operator_on_first_operand(driver):
 
 
 # test id - 9.2
+@severity(severity_level.BLOCKER)
 def test_plus_minus_operator_on_second_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -149,6 +160,7 @@ def test_plus_minus_operator_on_second_operand(driver):
         assert calculator_page.get_second_operand() == '1'
 
 # test id - 9.3
+@severity(severity_level.BLOCKER)
 def test_plus_minus_operator_in_operation(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -167,6 +179,7 @@ def test_plus_minus_operator_in_operation(driver):
 
 
 # test id - 10
+@severity(severity_level.BLOCKER)
 def test_float_point_number_operations(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -189,6 +202,7 @@ def test_float_point_number_operations(driver):
 
 
 # test id - 11
+@severity(severity_level.CRITICAL)
 def test_operation_with_result(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
@@ -209,6 +223,7 @@ def test_operation_with_result(driver):
 
 
 # test id - 12
+@severity(severity_level.NORMAL)
 def test_sum_of_two_empty_floating_points(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на оператор .'):
@@ -224,6 +239,7 @@ def test_sum_of_two_empty_floating_points(driver):
 
 
 # test id - 13
+@severity(severity_level.NORMAL)
 def test_plus_minus_operator_on_a_point(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на оператор .'):
@@ -235,6 +251,7 @@ def test_plus_minus_operator_on_a_point(driver):
 
 
 # test id - 14
+@severity(severity_level.NORMAL)
 def test_plus_minus_operator_on_empty_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на оператор +/-'):
@@ -244,6 +261,7 @@ def test_plus_minus_operator_on_empty_operand(driver):
 
 
 # test id - 15
+@severity(severity_level.NORMAL)
 def test_plus_operator_on_an_empty_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на оператор +'):
@@ -253,6 +271,7 @@ def test_plus_operator_on_an_empty_operand(driver):
 
 
 # test id - 16
+@severity(severity_level.NORMAL)
 def test_delete_symbol_operator_on_an_empty_first_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на оператор ←'):
@@ -262,6 +281,7 @@ def test_delete_symbol_operator_on_an_empty_first_operand(driver):
 
 
 # test id - 17
+@severity(severity_level.BLOCKER)
 def test_plus_minus_operator_on_a_floating_point_number_operand(driver):
     calculator_page = CalculatorPage(driver)
     with allure.step('Нажать на кнопку 1'):
